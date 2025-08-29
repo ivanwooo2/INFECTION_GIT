@@ -1,0 +1,11 @@
+ボタン１　https://soundeffect-lab.info/sound/button/（決定ボタンを押す35）
+ボタン２　https://soundeffect-lab.info/sound/button/（決定ボタンを押す34）
+
+ボス攻撃１－６
+
+ボス受击１ https://otologic.jp/free/se/panic01.html(1.オノマトペ　慌てる06) https://otologic.jp/free/se/radio-communication01.html(モールス信号02)
+ボス受击２
+
+ダッシュ　https://otologic.jp/free/se/motion-agility01.html(モーション　俊敏11)
+
+プレイヤー受击https://otologic.jp/free/se/pc03.html(OS効果音01)
