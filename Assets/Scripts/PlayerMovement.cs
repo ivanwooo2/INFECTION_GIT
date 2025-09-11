@@ -27,14 +27,20 @@ public class PlayerMovement : MonoBehaviour
     [Header("Cooldown UI")]
     [SerializeField] private Image dashCooldownImage;
     [SerializeField] private Image skillCooldownImage;
+    [SerializeField] private Image PassiveImage;
+    [SerializeField] private GameObject Player2SkillEffect;
+    [SerializeField] private Image Player2SkillEffect2;
     [SerializeField] private TMP_Text dashCooldownText;
     [SerializeField] private TMP_Text skillCooldownText;
     [SerializeField] private GameObject SkillusingImage;
     [SerializeField] private GameObject SkillCooldownBG;
+    [SerializeField] private Sprite Player1Skill, Player2Skill;
+    [SerializeField] private Sprite Player1Passive, Player2Passive;
 
     [SerializeField] private float skill2FreezeDuration = 6f;
     [SerializeField] private float skill2Cooldown = 16f;
     private float skillCooldownRemaining;
+    private float skill2FreezeDurationRemaining;
 
     [SerializeField] private float skill1Duration = 5f;
     [SerializeField] private float skill1Cooldown = 10f;
@@ -68,10 +74,16 @@ public class PlayerMovement : MonoBehaviour
         if (PlayerIndex == 0)
         {
             spriteRenderer.sprite = PlayerSkin1;
+            skillCooldownImage.sprite = Player1Skill;
+            SkillCooldownBG.GetComponent<Image>().sprite = Player1Skill;
+            PassiveImage.sprite = Player1Passive;
         }
         else if (PlayerIndex == 1)
         {
             spriteRenderer.sprite = PlayerSkin2;
+            skillCooldownImage.sprite = Player2Skill;
+            SkillCooldownBG.GetComponent<Image>().sprite = Player2Skill;
+            PassiveImage.sprite = Player2Passive;
         }
     }
 
@@ -220,8 +232,18 @@ public class PlayerMovement : MonoBehaviour
 
         if (skillCooldownImage != null)
         {
-            float skillFill = Mathf.Clamp01(1 - (skillCooldownRemaining / skill1Cooldown));
-            skillCooldownImage.fillAmount = skillFill;
+            if (PlayerIndex == 0)
+            {
+                float skillFill = Mathf.Clamp01(1 - (skillCooldownRemaining / skill1Cooldown));
+                skillCooldownImage.fillAmount = skillFill;
+            }
+            if (PlayerIndex == 1)
+            {
+                float skillFill = Mathf.Clamp01(1 - (skillCooldownRemaining / skill2Cooldown));
+                skillCooldownImage.fillAmount = skillFill;
+                float Player2SkillEffect = Mathf.Clamp01(skill2FreezeDurationRemaining/skill2FreezeDuration);
+                Player2SkillEffect2.fillAmount = Player2SkillEffect;
+            }
 
             if (skillCooldownText != null)
             {
@@ -272,12 +294,19 @@ public class PlayerMovement : MonoBehaviour
         isSkill2Ready = false;
         isSkilling = true;
         FireLifeTime fireLifeTime = FindAnyObjectByType<FireLifeTime>();
+        Player2SkillEffect.SetActive(true);
         if (fireLifeTime != null)
         {
             fireLifeTime.SkillPause();
         }
         TimeManager.TriggerSkillPause(skill2FreezeDuration);
-        yield return new WaitForSeconds(skill2FreezeDuration);
+        skill2FreezeDurationRemaining = skill2FreezeDuration;
+        while (skill2FreezeDurationRemaining > 0)
+        {
+            skill2FreezeDurationRemaining -= Time.deltaTime;
+            yield return null;
+        }
+        Player2SkillEffect.SetActive(false);
         skillCooldownRemaining = skill2Cooldown;
         while (skillCooldownRemaining > 0)
         {
