@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dded920034bd6947bd5e8adbb81d144, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 6
+  damage: 8
   lifetime: 10
   sprites:
   - {fileID: 21300000, guid: f99a5d11f28e46b4db42943e96311ed7, type: 3}

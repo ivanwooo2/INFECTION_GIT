@@ -47,7 +47,7 @@ public class PlayerMovementTutorial : MonoBehaviour
     public AudioSource Player;
     public AudioClip dash, skill1, skill2;
 
-    private float moveDistance = 3f;
+    private float moveDistance = 2f;
     private Vector2 spawnPosition;
 
     public bool isInvincible = false;

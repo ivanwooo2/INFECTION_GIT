@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0, z: 0}
   BulletSpeed: 7
-  Damage: 2
+  Damage: 5
   difficulty: 1
 --- !u!70 &9132230206624751733
 CapsuleCollider2D:

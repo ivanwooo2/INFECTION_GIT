@@ -11,6 +11,7 @@ public class Player1AttackManager : MonoBehaviour
     private PlayerMovement PlayerMovement;
     [SerializeField] private Sprite NormalAttack;
     [SerializeField] private Sprite SkillAttack;
+    [SerializeField] private Sprite Player2Attack;
     private int PlayerIndex;
     void Start()
     {
@@ -28,10 +29,16 @@ public class Player1AttackManager : MonoBehaviour
         if (PlayerMovement.isSkilling == true && PlayerIndex == 0)
         {
             SpriteRenderer.sprite = SkillAttack;
+            transform.localScale = new Vector3(0.3f, 0.3f, 1);
         }
-        else
+        else if (PlayerMovement.isSkilling == false && PlayerIndex == 0)
         {
             SpriteRenderer.sprite = NormalAttack;
+        }
+        else if (PlayerIndex == 1)
+        {
+            SpriteRenderer.sprite = Player2Attack;
+            transform.localScale = new Vector3(0.1f, 0.1f, 1);
         }
     }
 

@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class MainGameSceneManage : MonoBehaviour
 {
     [SerializeField] GameObject pausePanel;
-    [SerializeField] bool isPausing = false;
+    [SerializeField] public bool isPausing = false;
     [SerializeField] GameObject BGM;
     [SerializeField] GameObject SE;
     [SerializeField] AudioSource BGMsource;
@@ -21,6 +21,7 @@ public class MainGameSceneManage : MonoBehaviour
         BGMsource = BGM.GetComponent<AudioSource>();
         SEsource = SE.GetComponent<AudioSource>();
         Cursor.visible = false;
+        Time.timeScale = 1;
     }
 
     void Update()

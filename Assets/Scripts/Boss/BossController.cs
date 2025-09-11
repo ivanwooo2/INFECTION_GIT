@@ -17,6 +17,7 @@ public class BossController : MonoBehaviour
     private GameObject Boss;
     [SerializeField] private GameObject LastBossPrefab;
     [SerializeField] private GameObject Player1Attack;
+    [SerializeField] private GameObject Player2Attack;
     [SerializeField] public float minInterval;
     [SerializeField] public float maxInterval;
     [SerializeField] public float moveSpeed;
@@ -386,10 +387,24 @@ public class BossController : MonoBehaviour
         {
             if (currentBoss != null)
             {
-                GameObject Player1attack = Instantiate(Player1Attack,playerTransform.position,Quaternion.identity);
-                Vector3 direction = currentBoss.transform.position - playerTransform.position;
-                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-                Player1attack.transform.rotation = Quaternion.Euler(0, 0, angle - 90);
+                if (PlayerIndex == 0)
+                {
+                    GameObject Player1attack = Instantiate(Player1Attack, playerTransform.position, Quaternion.identity);
+                    Vector3 direction = currentBoss.transform.position - playerTransform.position;
+                    float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                    Player1attack.transform.rotation = Quaternion.Euler(0, 0, angle - 90);
+                }
+                if (PlayerIndex == 1)
+                {
+                    for (int i = 0; i < 3; i++)
+                    {
+                        yield return new WaitForSeconds(0.03f);
+                        GameObject Player1attack = Instantiate(Player1Attack, playerTransform.position, Quaternion.identity);
+                        Vector3 direction = currentBoss.transform.position - playerTransform.position;
+                        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                        Player1attack.transform.rotation = Quaternion.Euler(0, 0, angle - 90);
+                    }
+                }
                 arc.clip = attack1;
                 arc.Play();
                 GameObject EffectClone = Instantiate(playerDamageEffect,currentBoss.transform);

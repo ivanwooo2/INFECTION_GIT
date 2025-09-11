@@ -101,6 +101,8 @@ MonoBehaviour:
   moveSpeed: 6
   Damage: 4
   hitAnimation: {fileID: 8942955429576102932, guid: 5a24a315a05dd294883e3c4b276991a9, type: 3}
+  SEplayer: {fileID: 0}
+  clip: {fileID: 8300000, guid: 022e5a0bc5c87b94f97e6b758ac60a34, type: 3}
 --- !u!70 &8381835138308432093
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

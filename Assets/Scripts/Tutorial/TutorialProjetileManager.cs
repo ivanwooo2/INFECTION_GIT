@@ -133,7 +133,7 @@ public class TutorialProjetileManager : MonoBehaviour
 
         Destroy(projectile, 2f);
     }
-    IEnumerator LockOnAttackLogic()
+    public IEnumerator LockOnAttackLogic()
     {
         while (PlayerMovementTutorial.dashed == false)
         {

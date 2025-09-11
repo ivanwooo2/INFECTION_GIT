@@ -31,6 +31,7 @@ public class LockOnLaserTutorial : MonoBehaviour
     public void Initialize(Transform[] points)
     {
         spawnPoints = points;
+        canFire = true;
         player = GameObject.FindGameObjectWithTag("Player").transform;
         mainCamera = Camera.main;
 

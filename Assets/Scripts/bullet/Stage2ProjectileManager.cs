@@ -25,6 +25,7 @@ public class Stage2ProjectileManager : MonoBehaviour
 
         [Header("narudo")]
         public GameObject FireBottlePrefab;
+        public int FireBottleNumber;
 
         [Header("grenade")]
         public GameObject fraggrenadePrefab;
@@ -49,8 +50,12 @@ public class Stage2ProjectileManager : MonoBehaviour
     private Vector3 aimMissilespawnOffset;
 
     private bool wasPaused = false;
+
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip MissileRain;
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         StartCoroutine(AttackScheduler());
     }
 
@@ -268,6 +273,8 @@ public class Stage2ProjectileManager : MonoBehaviour
 
     IEnumerator Pattern1Logic(AttackPattern pattern)
     {
+        audioSource.clip = MissileRain;
+        audioSource.Play();
         int Count = 0;
         for (int i = 0; i < pattern.missileSpawnPoints.Length;i++)
         {
@@ -318,20 +325,24 @@ public class Stage2ProjectileManager : MonoBehaviour
 
     IEnumerator Pattern3Logic(AttackPattern pattern)
     {
-        while (TimeManager.IsSkillPaused)
+        for (int i = 0; i < pattern.FireBottleNumber; i++)
         {
-            yield return null;
-        }
-        Vector2 spawnPos = new Vector2(
-            Random.Range(Camera.main.ViewportToWorldPoint(new Vector2(0.2f, 0)).x,
-            Camera.main.ViewportToWorldPoint(new Vector2(0.8f, 0)).x),
-            Random.Range(Camera.main.ViewportToWorldPoint(new Vector2(0, 0.2f)).y,
-            Camera.main.ViewportToWorldPoint(new Vector2(0, 0.8f)).y)
-        );
-        GameObject fireBottle = Instantiate(pattern.FireBottlePrefab,spawnPos, Quaternion.identity);
-        activeProjectiles.Add(fireBottle);
+            while (TimeManager.IsSkillPaused)
+            {
+                yield return null;
+            }
 
-        yield return new WaitForSeconds(1f);
+            Vector2 spawnPos = new Vector2(
+                Random.Range(Camera.main.ViewportToWorldPoint(new Vector2(0.2f, 0)).x,
+                Camera.main.ViewportToWorldPoint(new Vector2(0.8f, 0)).x),
+                Random.Range(Camera.main.ViewportToWorldPoint(new Vector2(0, 0.2f)).y,
+                Camera.main.ViewportToWorldPoint(new Vector2(0, 0.8f)).y)
+            );
+            GameObject fireBottle = Instantiate(pattern.FireBottlePrefab, spawnPos, Quaternion.identity);
+            activeProjectiles.Add(fireBottle);
+
+            yield return new WaitForSeconds(1f);
+        }
     }
 
     IEnumerator Pattern4logic(AttackPattern pattern)

@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.Burst.Intrinsics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -54,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
 
     public bool isInvincible = false;
     public int PlayerIndex;
+    private MainGameSceneManage maingamescene;
 
     void Start()
     {
@@ -64,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
         bossController = FindObjectOfType<BossController>();
         stage2BossController = FindObjectOfType<Stage2BossController>();
         PlayerIndex = PlayerPrefs.GetInt("SelectedCharacterIndex");
+        maingamescene = FindObjectOfType<MainGameSceneManage>();
         if (PlayerIndex == 0)
         {
             spriteRenderer.sprite = PlayerSkin1;
@@ -183,11 +184,15 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Q) && isSkill2Ready || Input.GetButtonDown("Skill") && isSkill2Ready)
+        if (Input.GetKeyDown(KeyCode.Q) && isSkill2Ready && maingamescene.isPausing == false || Input.GetButtonDown("Skill") && isSkill2Ready && maingamescene.isPausing == false)
         {
             if (TimeManager.Instance != null && TimeManager.Instance.isGameOver)
             {
                 playerRB.velocity = Vector2.zero;
+                return;
+            }
+            if (TimeManager.currentTime > 299f)
+            {
                 return;
             }
             if (PlayerIndex == 1)
@@ -266,6 +271,11 @@ public class PlayerMovement : MonoBehaviour
     {
         isSkill2Ready = false;
         isSkilling = true;
+        FireLifeTime fireLifeTime = FindAnyObjectByType<FireLifeTime>();
+        if (fireLifeTime != null)
+        {
+            fireLifeTime.SkillPause();
+        }
         TimeManager.TriggerSkillPause(skill2FreezeDuration);
         yield return new WaitForSeconds(skill2FreezeDuration);
         skillCooldownRemaining = skill2Cooldown;
