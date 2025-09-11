@@ -18,6 +18,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private GameObject playerDamageEffect;
     [SerializeField] private GameObject projectileManager;
     [SerializeField] private GameObject Stage2projectileManager;
+    [SerializeField] private ParticleSystem PlayerParticle;
     [SerializeField] Animator transition;
     [SerializeField] float transitionTime = 1f;
     [SerializeField] GameObject PlayerDestroyEffect;
@@ -65,6 +66,7 @@ public class PlayerHealth : MonoBehaviour
 
         GameObject DamageEffect = Instantiate(playerDamageEffect,transform);
         DamageEffect.transform.rotation = Quaternion.Euler(0, 0, randomRotateZ);
+        PlayerParticle.Play();
         Player.clip = Damaged;
         Player.Play();
         StartCoroutine(InvincibleRoutine());

@@ -8,8 +8,8 @@ public class TimeManager : MonoBehaviour
 {
     public static TimeManager Instance;
 
-    [SerializeField] private float totalTime = 300f;
-    private float currentTime;
+    [SerializeField] public static float totalTime = 300f;
+    public static float currentTime;
     public bool isGameOver = false;
     [SerializeField] private TMP_Text timerText;
 

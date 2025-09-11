@@ -16,11 +16,13 @@ public class Sniper : MonoBehaviour
     public float laserExtension = 10f;
 
     [SerializeField] private GameObject SniperAim;
+    [SerializeField] private AudioClip audioClip1;
     private GameObject Player;
     private Camera mainCamera;
     private Vector3 targetPositions;
     private Vector3 LastPlayerposition;
     private LineRenderer lineRenderer;
+    private AudioSource audioSource;
 
     public bool IsComplete { get; private set; }
 
@@ -28,8 +30,11 @@ public class Sniper : MonoBehaviour
     {
         lineRenderer = GetComponent<LineRenderer>();
         Player = GameObject.FindGameObjectWithTag("Player");
+        audioSource = GetComponent<AudioSource>();
         mainCamera = Camera.main;
         targetPositions = Player.transform.position;
+        audioSource.clip = audioClip1;
+        audioSource.Play();
         StartCoroutine(LockOnRoutine());
     }
 
@@ -52,9 +57,9 @@ public class Sniper : MonoBehaviour
         }
 
         yield return new WaitForSeconds(attackDelay);
-        Destroy(gameObject);
-        Destroy(sniperaim);
         FireProjectiles();
+        Destroy(sniperaim);
+        Destroy(gameObject);
         IsComplete = true;
     }
     void UpdateLaserPositions()

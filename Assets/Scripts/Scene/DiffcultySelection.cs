@@ -125,7 +125,7 @@ public class DiffcultySelection : MonoBehaviour
     {
         transition.SetBool("Start", true);
         yield return new WaitForSeconds(transitionTime);
-        if (tutorialCheckManager.TutorialDone == false && selectedIndex == 0)
+        if (tutorialCheckManager.TutorialDone == false && selectedIndex == 0 && isReturn == false)
         {
             SceneManager.LoadScene("tutorial");
             SelectionSceneBGMManager BGMmanager = FindObjectOfType<SelectionSceneBGMManager>();

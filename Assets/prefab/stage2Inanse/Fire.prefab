@@ -289,8 +289,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 4
-      minScalar: 3
+      scalar: 2
+      minScalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -4864,9 +4864,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.14192009, y: -0.22380376}
+  m_Offset: {x: 0.17703581, y: -0.24721396}
   serializedVersion: 2
-  m_Radius: 2.2753685
+  m_Radius: 1.8188647
 --- !u!114 &-8372111472783195543
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -73,8 +73,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d77b8a7c8f411194cabd0a501895af31, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 60d035be689086e4dbdcfc4b9e69e74b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,3 +100,4 @@ MonoBehaviour:
   moveSpeed: 15
   NormalAttack: {fileID: 21300000, guid: d77b8a7c8f411194cabd0a501895af31, type: 3}
   SkillAttack: {fileID: 21300000, guid: e9e461d3f8cc50c438c66f5e93848a75, type: 3}
+  Player2Attack: {fileID: 21300000, guid: 60d035be689086e4dbdcfc4b9e69e74b, type: 3}

@@ -21,10 +21,6 @@ public class FireBottle : MonoBehaviour
     {
         GetComponent<Collider2D>().enabled = false;
         _transform = transform;
-        SoundEffect = GameObject.FindGameObjectWithTag("SoundEffectPlayer");
-        stone = SoundEffect.GetComponent<AudioSource>();
-        stone.clip = sfx1;
-        stone.Play();
 
     }
     public void Initialize(Vector3 target, float travelTime)
@@ -52,8 +48,6 @@ public class FireBottle : MonoBehaviour
 
         if (normalizedTime >= 1f)
         {
-            stone.clip = sfx2;
-            stone.Play();
             transform.position = targetPosition;
             GameObject FireEffect = Instantiate(Fire, transform.position, Quaternion.identity);
             Destroy(gameObject, 0.02f);

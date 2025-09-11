@@ -10,9 +10,14 @@ public class SnipedBullet : MonoBehaviour
     private PlayerMovement playerMovement;
     [SerializeField] private int damage;
     [SerializeField] private float lifetime;
+    [SerializeField] private AudioClip audioClip1;
+    private AudioSource audioSource;
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
+        audioSource.loop = false;
+        audioSource.clip = audioClip1;
+        audioSource.Play();
     }
 
     public void Initialize(Vector3 dir, GameObject playerObj)

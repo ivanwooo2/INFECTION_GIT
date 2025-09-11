@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aa644039be6e3d45827c04e6c233dd2, type: 3}
   m_Name: Level2Data
   m_EditorClassIdentifier: 
-  StageName: STAGE 2
+  StageName: 'STAGE 2
+
+    Eselion'
   isUnlocked: 1
   lockedSprite: {fileID: 21300000, guid: e855456524fde2d4bb4400e9d5b8dfa0, type: 3}
   unlockedSprite: {fileID: 21300000, guid: 24c668aa60dbbcc438b5d246038ae930, type: 3}

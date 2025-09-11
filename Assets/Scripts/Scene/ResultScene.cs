@@ -73,13 +73,6 @@ public class ResultScene : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Submit"))
-        {
-            RestartGame();
-        }
-        else if (Input.GetButtonDown("Cancel"))
-        {
-            Title();
-        }
+
     }
 }

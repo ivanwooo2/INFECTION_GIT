@@ -11,7 +11,9 @@ public class Stage2Player1Attack : MonoBehaviour
     private PlayerMovement PlayerMovement;
     [SerializeField] private Sprite NormalAttack;
     [SerializeField] private Sprite SkillAttack;
+    [SerializeField] private Sprite Player2Attack;
     private int PlayerIndex;
+    private float angle;
     void Start()
     {
         PlayerIndex = PlayerPrefs.GetInt("SelectedCharacterIndex");
@@ -21,7 +23,7 @@ public class Stage2Player1Attack : MonoBehaviour
         if (BossController != null)
         {
             direction = (BossController.currentBoss.transform.position - transform.position).normalized;
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0, 0, angle - 90);
         }
 
@@ -30,9 +32,15 @@ public class Stage2Player1Attack : MonoBehaviour
             SpriteRenderer.sprite = SkillAttack;
             transform.localScale = new Vector3(0.3f, 0.3f, 1);
         }
-        else
+        else if (PlayerMovement.isSkilling == false && PlayerIndex == 0)
         {
             SpriteRenderer.sprite = NormalAttack;
+        }
+        else if (PlayerIndex == 1)
+        {
+            SpriteRenderer.sprite = Player2Attack;
+            transform.rotation = Quaternion.Euler(0, 0, angle);
+            transform.localScale = new Vector3(0.1f, 0.1f, 1);
         }
     }
 

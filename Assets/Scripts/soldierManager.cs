@@ -12,9 +12,13 @@ public class soldierManager : MonoBehaviour
     [SerializeField] private float ShootInterval;
     [SerializeField] private GameObject GunPrefab;
     [SerializeField] public int difficulty = 1;
+    [SerializeField] private AudioClip audioClip;
+    private AudioSource audioSource;
     private float gotoframe = 0f;
+
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         Player = GameObject.FindWithTag("Player");
     }
 
@@ -55,6 +59,8 @@ public class soldierManager : MonoBehaviour
             }
             yield return new WaitForSeconds(ShootInterval);
             GameObject Bullet = Instantiate(BulletPrefab[0], Shootingpoint.transform.position,Quaternion.identity);
+            audioSource.clip = audioClip;
+            audioSource.Play();
             if (difficulty >= 2)
             {
                 GameObject Bullet1 = Instantiate(BulletPrefab[1], Shootingpoint.transform.position, Quaternion.identity);
@@ -69,6 +75,8 @@ public class soldierManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         if (difficulty == 3)
         {
+            audioSource.clip = audioClip;
+            audioSource.Play();
             GameObject Bullet5 = Instantiate(BulletPrefab[5], Shootingpoint.transform.position, Quaternion.identity);
         }
         Destroy(gameObject);

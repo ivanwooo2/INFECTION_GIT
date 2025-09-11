@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aa644039be6e3d45827c04e6c233dd2, type: 3}
   m_Name: Level1Data
   m_EditorClassIdentifier: 
-  StageName: STAGE 1
+  StageName: 'STAGE 1
+
+    Kasperion'
   isUnlocked: 1
   lockedSprite: {fileID: 0}
   unlockedSprite: {fileID: 21300000, guid: e6657b36f2d899a47ab1900b3616c9d2, type: 3}

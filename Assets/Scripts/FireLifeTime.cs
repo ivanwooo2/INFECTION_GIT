@@ -16,14 +16,10 @@ public class FireLifeTime : MonoBehaviour
         _particleSystem = GetComponent<ParticleSystem>();
         Destroy(gameObject, LifeTime);
     }
-
+    bool lastPause = false;
     void Update()
     {
-        while (TimeManager.IsSkillPaused)
-        {
-            _particleSystem.Pause();
-        }
-        _particleSystem.Play();
+        
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -33,5 +29,10 @@ public class FireLifeTime : MonoBehaviour
         {
             collision.GetComponent<PlayerHealth>().TakeDamage(damage);
         }
+    }
+
+    public void SkillPause()
+    {
+        _particleSystem.Pause();
     }
 }

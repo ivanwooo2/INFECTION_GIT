@@ -103,7 +103,7 @@ MonoBehaviour:
   damage: 10
   lifetime: 5
   bow1: {fileID: -8238129807142480019}
-  sfx1: {fileID: 8300000, guid: 52977eb6032d9f7419719b36c271f304, type: 3}
+  sfx1: {fileID: 8300000, guid: a98b90be2a712444b85277c0926f9fe6, type: 3}
 --- !u!70 &6915897645477218490
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
