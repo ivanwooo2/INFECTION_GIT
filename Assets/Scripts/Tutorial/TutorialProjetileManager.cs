@@ -58,7 +58,7 @@ public class TutorialProjetileManager : MonoBehaviour
 
     public void spawnLaser()
     {
-            StartCoroutine(LockOnAttackLogic());
+       ¡@StartCoroutine(LockOnAttackLogic());
     }
 
     IEnumerator Pattern4Logic()
@@ -133,9 +133,9 @@ public class TutorialProjetileManager : MonoBehaviour
 
         Destroy(projectile, 2f);
     }
-    public IEnumerator LockOnAttackLogic()
+    IEnumerator LockOnAttackLogic()
     {
-        while (PlayerMovementTutorial.dashed == false)
+        while (true)
         {
             GameObject laserObj = Instantiate(
                 lockOnLaserPrefab,
