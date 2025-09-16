@@ -20,4 +20,4 @@ MonoBehaviour:
   lockedSprite: {fileID: 0}
   unlockedSprite: {fileID: 21300000, guid: 607e6bf205c41e04f9cdc219ff2cf768, type: 3}
   backGround: {fileID: 21300000, guid: 3773deef187e49643b47f35dc28ac872, type: 3}
-  SkillIcon: {fileID: 21300000, guid: 1b18dddfbfe63d544a2308708e858171, type: 3}
+  SkillIcon: {fileID: 21300000, guid: 24e4528b7d5287343aa1e8ba26511d58, type: 3}
