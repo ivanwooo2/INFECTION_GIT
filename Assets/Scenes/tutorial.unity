@@ -746,7 +746,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -242}
+  m_AnchoredPosition: {x: 0, y: -212}
   m_SizeDelta: {x: 1025, y: 140.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &70732842
@@ -769,7 +769,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: "Q\u30AD\u30FC/\u3007\u30DC\u30BF\u30F3\u6B21\u3078\u9032\u3080"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 70117f40abd4b304085ce4b1c5c243b5, type: 2}
   m_sharedMaterial: {fileID: -8529742670960081016, guid: 70117f40abd4b304085ce4b1c5c243b5, type: 2}
@@ -3764,7 +3764,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -571.1765, y: -121.6037, z: -538.00146, w: -159.71466}
+  m_margin: {x: -0.1373291, y: 0.386261, z: 1.4885254, w: 1.185852}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3792,10 +3792,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1487247586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -76}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchorMin: {x: 0.5, y: 0.4535926}
+  m_AnchorMax: {x: 0.5, y: 0.4535926}
+  m_AnchoredPosition: {x: 3.0221, y: 2.2060013}
+  m_SizeDelta: {x: 1337.2773, y: 187.51}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &753727227
 GameObject:

@@ -24,6 +24,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] GameObject PlayerDestroyEffect;
     [SerializeField] private float randomX;
     [SerializeField] private float randomY;
+    [SerializeField] private TutorialManager tutorialManager;
     private float randomRotateZ;
     private SpriteRenderer spriteRenderer;
     public AudioSource arc;
@@ -76,6 +77,11 @@ public class PlayerHealth : MonoBehaviour
         {
             currentHealth = 1;
             hasPersisted = true;
+            return;
+        }
+
+        if (tutorialManager != null && currentHealth < 20)
+        {
             return;
         }
         currentHealth = Mathf.Max(currentHealth - finalDamage, 0);

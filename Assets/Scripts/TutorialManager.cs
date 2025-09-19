@@ -108,7 +108,7 @@ public class TutorialManager : MonoBehaviour
         BossManagerTutorial.SpawnBoss();
         yield return new WaitForSeconds(2f);
         TutorialCanvas.SetActive(true);
-        TutorialText.text = "ただし、今回はチュートリアルなので動くことはありません。";
+        TutorialText.text = "ただし、今回はチュートリアルなので\n動くことはありません。";
         ButtonText.text = "Qキー/〇ボタン次へ進む";
         yield return new WaitUntil(() => Input.GetButtonDown("Skill"));
         yield return new WaitForSeconds(0.1f);
@@ -124,7 +124,7 @@ public class TutorialManager : MonoBehaviour
         ButtonText.text = "Qキー/〇ボタン次へ進む";
         yield return new WaitUntil(() => Input.GetButtonDown("Skill"));
         yield return new WaitForSeconds(0.1f);
-        TutorialText.text = "もちろんボスに接触してもダメージを受けることはありません。";
+        TutorialText.text = "もちろんボスに接触しても\nダメージを受けることはありません。";
         ButtonText.text = "Qキー/〇ボタン次へ進む";
         yield return new WaitUntil(() => Input.GetButtonDown("Skill"));
         yield return new WaitForSeconds(0.1f);
@@ -146,7 +146,7 @@ public class TutorialManager : MonoBehaviour
         TutorialCanvas.SetActive(true);
         BackGround.SetActive(false);
         BossManagerHP.SetActive(true);
-        BossUItext.text = "これはボスのダメージゲージです。";
+        BossUItext.text = "これは\nボスのダメージゲージです。";
         ButtonText.text = "Qキー/〇ボタン次へ進む";
         yield return new WaitUntil(() => Input.GetButtonDown("Skill"));
         yield return new WaitForSeconds(0.1f);
@@ -154,7 +154,7 @@ public class TutorialManager : MonoBehaviour
         ButtonText.text = "Qキー/〇ボタン次へ進む";
         yield return new WaitUntil(() => Input.GetButtonDown("Skill"));
         yield return new WaitForSeconds(0.1f);
-        BossUItext.text = "ゲージが100%になるとミッション・コンプリートです。";
+        BossUItext.text = "ゲージが100%になると\nミッション・コンプリートです。";
         ButtonText.text = "Qキー/〇ボタン次へ進む";
         yield return new WaitUntil(() => Input.GetButtonDown("Skill"));
         yield return new WaitForSeconds(0.1f);
@@ -181,11 +181,11 @@ public class TutorialManager : MonoBehaviour
         TutorialCanvas.SetActive(true);
         PlayerHP.SetActive(true);
         BackGround.SetActive(false);
-        PlayerHPUIText.text = "これはあなたのHPゲージです。";
+        PlayerHPUIText.text = "これは\nあなたのHPゲージです。";
         ButtonText.text = "Qキー/〇ボタン次へ進む";
         yield return new WaitUntil(() => Input.GetButtonDown("Skill"));
         yield return new WaitForSeconds(0.1f);
-        PlayerHPUIText.text = "HPが0になるとゲームオーバーです。";
+        PlayerHPUIText.text = "HPが0になると\nゲームオーバーです。";
         ButtonText.text = "Qキー/〇ボタン次へ進む";
         yield return new WaitUntil(() => Input.GetButtonDown("Skill"));
         yield return new WaitForSeconds(0.1f);
@@ -305,7 +305,7 @@ public class TutorialManager : MonoBehaviour
         ButtonText.text = "Qキー/〇ボタン次へ進む";
         yield return new WaitUntil(() => Input.GetButtonDown("Skill"));
         yield return new WaitForSeconds(0.1f);
-        TutorialText.text = "ボスの弱点ポイントはランダムなタイミングで出現します。";
+        TutorialText.text = "ボスの弱点ポイントは\nランダムなタイミングで出現します。";
         ButtonText.text = "Qキー/〇ボタン次へ進む";
         yield return new WaitUntil(() => Input.GetButtonDown("Skill"));
         yield return new WaitForSeconds(0.1f);
