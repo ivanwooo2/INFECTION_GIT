@@ -114,7 +114,7 @@ public class TimeManager : MonoBehaviour
             return;
         }
 
-        if (playerHealth.currentHealth > 0)
+        if (playerHealth.currentHealth > 0 && currentTime > 0)
         {
             SceneManager.LoadScene("ResultScene");
         }

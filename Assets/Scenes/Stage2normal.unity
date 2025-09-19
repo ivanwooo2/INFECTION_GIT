@@ -962,7 +962,7 @@ MonoBehaviour:
     SniperRifle: {fileID: 0}
     Sniperpoint: {fileID: 0}
     isReady: 1
-  - name: narudo
+  - name: fireBottle
     cooldown: 2.5
     weight: 1
     missilePrefab: {fileID: 0}
@@ -973,7 +973,7 @@ MonoBehaviour:
     aimMissileNumber: 0
     aimMissileinterval: 0
     FireBottlePrefab: {fileID: 6658452603097509866, guid: 0b69226a899b6cc4aa5347263f3cad0a, type: 3}
-    FireBottleNumber: 0
+    FireBottleNumber: 1
     fraggrenadePrefab: {fileID: 0}
     SniperRifle: {fileID: 0}
     Sniperpoint: {fileID: 0}
@@ -4296,6 +4296,7 @@ MonoBehaviour:
   PlayerDestroyEffect: {fileID: 1481550198545971830, guid: 7cfcd383fe9b55c418fd56a420c6515f, type: 3}
   randomX: 0
   randomY: 0
+  tutorialManager: {fileID: 0}
   arc: {fileID: 1023787238}
   DestroySE: {fileID: 8300000, guid: d5190c6656d89b4448bf8a16707811c0, type: 3}
   isInvincible: 0

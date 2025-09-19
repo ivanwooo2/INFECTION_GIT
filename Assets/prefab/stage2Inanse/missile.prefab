@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 6
-  Damage: 7
+  Damage: 8
   hitAnimation: {fileID: 8942955429576102932, guid: 5a24a315a05dd294883e3c4b276991a9, type: 3}
   SEplayer: {fileID: 0}
   clip: {fileID: 0}

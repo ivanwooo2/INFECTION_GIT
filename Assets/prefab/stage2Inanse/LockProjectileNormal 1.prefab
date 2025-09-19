@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 35
-  damage: 5
+  damage: 6
   lifetime: 5
   audioClip1: {fileID: 8300000, guid: 9c92c2f33414a2a4c819ded2d843ce42, type: 3}
 --- !u!70 &6915897645477218490

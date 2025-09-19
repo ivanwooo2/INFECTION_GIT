@@ -23,7 +23,7 @@ public class Stage2ProjectileManager : MonoBehaviour
         public int aimMissileNumber;
         public float aimMissileinterval;
 
-        [Header("narudo")]
+        [Header("fireBottle")]
         public GameObject FireBottlePrefab;
         public int FireBottleNumber;
 
@@ -233,7 +233,7 @@ public class Stage2ProjectileManager : MonoBehaviour
             case "aimMissile":
                 yield return StartCoroutine(Pattern2Logic(pattern));
                 break;
-            case "narudo":
+            case "fireBottle":
                 yield return StartCoroutine(Pattern3Logic(pattern));
                 break;
             case "grenade":
